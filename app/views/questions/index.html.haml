@@ -1,0 +1,6 @@
+%h1 Questions
+- if @questions.count > 0
+  - @questions.each do |question|
+    %p= question.title
+- else
+  %p= t(:no_questions)
