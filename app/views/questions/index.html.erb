@@ -1,4 +1,8 @@
 <h1>Questions</h1>
-<% @questions.each do |question| %>
-  <%= question.title %><br>
+<% if @questions.count > 0 %>
+  <%@questions.each do |question| %>
+    <p><%= question.title %></p>
+  <% end %>
+<% else %>
+  <p><%= t(:no_questions) %></p>
 <% end %>

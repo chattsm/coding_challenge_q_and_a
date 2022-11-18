@@ -10,4 +10,12 @@ RSpec.feature 'Displaying questions' do
       expect(page).to have_text(question.title)
     end
   end
+
+  context 'when there are no questions to display' do
+    it 'displays a useful message' do
+      visit root_path
+
+      expect(page).to have_text(t(:no_questions))
+    end
+  end
 end
