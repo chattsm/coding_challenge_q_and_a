@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'questions/index'
+  resources :questions, only: [:index, :show]
+
   root 'questions#index'
 end

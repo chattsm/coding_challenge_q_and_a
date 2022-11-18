@@ -4,10 +4,18 @@ RSpec.feature 'Displaying questions' do
   context 'when there are questions to display' do
     let!(:question) { create(:question) }
 
-    it 'lists the questions to choose from' do
+    before do
       visit root_path
+    end
 
+    it 'lists the questions to choose from' do
       expect(page).to have_text(question.title)
+    end
+
+    it 'links to the questions to choose from' do
+      click_link(question.title)
+
+      expect(page).to have_current_path(question_path(question))
     end
   end
 
