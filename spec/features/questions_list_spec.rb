@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Displaying questions' do
-  context 'when there are questions to display' do
+RSpec.feature 'Listing questions' do
+  context 'when there are questions to list' do
     let!(:question) { create(:question) }
 
     before do
@@ -19,11 +19,21 @@ RSpec.feature 'Displaying questions' do
     end
   end
 
-  context 'when there are no questions to display' do
+  context 'when there are no questions to list' do
     it 'displays a useful message' do
       visit root_path
 
-      expect(page).to have_text(t(:no_questions))
+      expect(page).to have_text(t('questions.none'))
+    end
+  end
+
+  describe 'navigation' do
+    it 'displays a link to create a new question' do
+      visit root_path
+
+      click_link(t('questions.new'))
+
+      expect(page).to have_current_path(new_question_path)
     end
   end
 end

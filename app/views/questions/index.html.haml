@@ -1,6 +1,9 @@
 %h1 Questions
+
+= link_to t('questions.new'), new_question_path
+
 - if @questions.count > 0
   - @questions.each do |question|
     = link_to question.title, question_path(question)
 - else
-  %p= t(:no_questions)
+  %p= t('questions.none')

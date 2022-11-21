@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Creating questions' do
+RSpec.feature 'Displaying individual question' do
   let(:question) { create(:question) }
 
   before do

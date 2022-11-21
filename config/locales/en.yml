@@ -30,4 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  no_questions: "There are currently no questions to display."
+  questions:
+    new: "Create new"
+    none: "There are currently no questions to display."
