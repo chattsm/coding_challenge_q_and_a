@@ -14,4 +14,12 @@ RSpec.feature 'Displaying individual question' do
   it 'displays the question description' do
     expect(page).to have_text(question.description)
   end
+
+  describe 'navigation' do
+    it 'displays a link to listing questions' do
+      click_link('Back to Questions')
+
+      expect(page).to have_current_path(questions_path)
+    end
+  end
 end

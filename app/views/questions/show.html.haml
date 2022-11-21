@@ -1,2 +1,9 @@
-= @question.title
-= @question.description
+%h1 Question
+
+= link_to 'Back to Questions', questions_path
+
+%h2
+  = @question.title
+
+%p
+  = @question.description
