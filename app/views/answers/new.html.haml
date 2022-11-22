@@ -1,0 +1,11 @@
+%h2 New Answer
+
+%p= link_to t('questions.back'), question_path(@question)
+
+= form_with model: @answer, url: question_answers_path(@question) do |f|
+  %div
+    = f.label :content
+  %div
+    = f.text_area :content
+  %div
+    = f.submit 'Create'

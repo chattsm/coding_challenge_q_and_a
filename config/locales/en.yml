@@ -33,5 +33,6 @@ en:
   questions:
     new: "Create new"
     none: "There are currently no questions to display."
+    back: "Back to question"
   answers:
     none: "There are currently no answers to display."

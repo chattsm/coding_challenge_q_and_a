@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature 'Displaying individual question' do
-  let(:question) { create(:question) }
+  let(:user) { create(:user) }
+  let(:question) { create(:question, user: user) }
 
   before do
     visit question_path(question)

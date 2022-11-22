@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Listing questions' do
   context 'when there are questions to list' do
-    let!(:question) { create(:question) }
+    let(:user) { create(:user) }
+    let!(:question) { create(:question, user: user) }
 
     before do
       visit root_path

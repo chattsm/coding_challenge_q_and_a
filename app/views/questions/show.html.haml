@@ -13,3 +13,5 @@
         = answer.content
 - else
   %p= t('answers.none')
+
+%p= link_to t('questions.new'), new_question_answer_path(@question)

@@ -14,7 +14,7 @@ RSpec.feature 'Creating questions' do
     it 'allows creation of new Questions' do
       fill_in 'question_title', with: Faker::Lorem.sentence(word_count: 4)
       fill_in 'question_description', with: Faker::Lorem.sentence(word_count: 20)
-      click_button 'commit'
+      click_button 'Create'
 
       expect(Question.count).to eq(1)
     end
@@ -22,7 +22,7 @@ RSpec.feature 'Creating questions' do
     it 'redirects to Question listing page' do
       fill_in 'question_title', with: Faker::Lorem.sentence(word_count: 4)
       fill_in 'question_description', with: Faker::Lorem.sentence(word_count: 20)
-      click_button 'commit'
+      click_button 'Create'
 
       expect(page).to have_current_path(questions_path)
     end
