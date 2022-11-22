@@ -35,9 +35,15 @@ RSpec.feature 'Creating questions' do
   end
 
   context 'when logged out' do
-    it 'redirects to login page' do
+    before do
       visit new_question_path
+    end
 
+    it 'displays the correct message' do
+      expect(page).to have_content('You need to sign in or sign up before continuing')
+    end
+
+    it 'redirects to login page' do
       expect(page).to have_current_path(new_user_session_path)
     end
   end

@@ -3,3 +3,13 @@
 
 %p
   = @question.description
+
+%h3 Answers
+
+- if @answers.count > 0
+  %ul
+    - @answers.each do |answer|
+      %li
+        = answer.content
+- else
+  %p= t('answers.none')

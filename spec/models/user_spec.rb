@@ -2,6 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User do
   describe 'associations' do
-    it { should have_many(:questions) }
+    it { is_expected.to have_many(:questions) }
   end
 end
