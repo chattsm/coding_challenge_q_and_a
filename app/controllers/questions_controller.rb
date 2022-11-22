@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @questions = Question.all
   end
@@ -12,7 +14,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    Question.create!(question_params)
+    current_user.questions.create!(question_params)
 
     redirect_to questions_path
   end

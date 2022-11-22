@@ -33,7 +33,7 @@ RSpec.feature 'Listing questions' do
 
       click_link(t('questions.new'))
 
-      expect(page).to have_current_path(new_question_path)
+      expect(page).to have_current_path(new_user_session_path)
     end
   end
 end

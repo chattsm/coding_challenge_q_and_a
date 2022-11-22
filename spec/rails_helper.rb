@@ -64,4 +64,12 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Rails.application.routes.url_helpers
   config.include AbstractController::Translation
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end

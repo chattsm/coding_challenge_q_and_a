@@ -8,4 +8,13 @@
     = csp_meta_tag
     = stylesheet_link_tag "application"
   %body
+    %h1
+      = link_to 'Questions', questions_path
+
+    %p{class: "notice"}= notice
+    %p{class: "alert"}= alert
+
+    - if user_signed_in?
+      = button_to "Sign out", destroy_user_session_path, method: :delete
+
     = yield
